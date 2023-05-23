@@ -1,0 +1,38 @@
+{% extends 'user/index.html' %}
+{% block content %}
+<div style="min-height:500px;">
+
+<br>
+<center>
+    <b><h3>COMPANY RESPONSE DETAILS</h3></b>
+    <br>
+    <table border="2px" width="89%">
+
+        <tr>
+            <th><h5><b>COMPANY NAME</b></h5></th>
+            <th><h5><b>PLAN IMAGE</b></h5></th>
+            <th><h5><b>DATE</b></h5></th>
+            <th><h5><b>ADVANCE AMOUNT</b></h5></th>
+            <th><h5><b>WORK AGREEMENT</b></h5></th>
+            <th><h5><b>WORK PROGRESS</b></h5></th>
+            <th><h5><b>DOWNLOAD PLAN</b></h5></th>
+
+        </tr>
+
+
+        {% for i in data %}
+        <tr>
+            <td><h6>{{i.8}}</h6></td>
+            <td><a href="../media/{{i.4}}" data-lightbox="service"><img src="../media/{{i.4}}" style="width:150px;"></a></td>
+            <td><h6>{{i.3}}</h6></td>
+            <td><h6>{{i.5}}</h6></td>
+            <td><a href="../viewworkagrement/{{i.0}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="background-color:#fdbe33;; color:black;">View</button></a></td>
+            <td><a href="../viewworkprogress/{{i.0}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="background-color:red; color:white;">View</button></a></td>
+            <td><a href="../media/{{i.4}}" download>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="background-color:green; color:white;">download</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</center>
+</div>
+{% endblock %}

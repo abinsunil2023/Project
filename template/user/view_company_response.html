@@ -1,0 +1,33 @@
+{% extends 'user/index.html' %}
+{% block content %}
+<div style="min-height:500px;">
+
+<br>
+<center>
+    <b><h3>COMPANY RESPONSE DETAILS</h3></b>
+    <br>
+    <table border="2px" width="89%">
+
+        <tr>
+            <th><b><h5>COMPANY NAME</h5></b></th>
+            <th><b><h5>PLAN IMAGE</h5></b></th>
+            <th><b><h5>DATE</h5></b></th>
+            <th><b><h5>ADVANCE AMOUNT</h5></b></th>
+        </tr>
+
+
+        {% for i in data %}
+        <tr>
+            <td>{{i.1}}</td>
+            <td><a href="../media/{{i.4}}" data-lightbox="serivce"><img src="../media/{{i.4}}" style="width:150px;"></a></td>
+            <td>{{i.3}}</td>
+            <td>{{i.5}}</td>
+            <td><a href="../acceptworkrequest/{{i.0}}/{{i.2}}"><button style="background-color:#fdbe33;; color:black;">Accept</button></a></td>
+            <td><a href="../deleteworkrequest/{{i.0}}"><button style="background-color:red; color:black;">Delete</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</center>
+</div>
+{% endblock %}

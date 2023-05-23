@@ -1,0 +1,70 @@
+{% extends 'construction/index.html' %}
+{% block content %}
+<div>
+    <!-- Mobile Menu end -->
+    <div class="breadcome-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcome-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="icon nalika-home"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="breadcomb-report">
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report"
+                                            class="btn"><i class="icon nalika-download"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="product-status mg-b-30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+
+                    <div class="add-product">
+
+                    </div>
+                    <center>
+<h2>WORK REQUEST</h2><br><br>
+
+                    <table border="2px" style="width:100%">
+                        <tr>
+                            <th>USER NAME</th>
+                            <th>REQUIREMENT DETAILS</th>
+                            <th>PLAN IMAGE</th>
+                            <th>DATE</th>
+                            <th>ADVANCE AMOUNT</th>
+                        </tr>
+                            {% for i in data %}
+
+                            <tr>
+                                    <td>{{i.7}}</td>
+                                    <td>{{i.8}}</td>
+                                    <td><a href="../media/{{i.4}}" data-lightbox="service"><img src="../media/{{i.4}}" style="width:150px;"></a></td>
+                                    <td>{{i.3}}</td>
+                                    <td>{{i.5}}</td>
+                                </tr>
+                           {% endfor %}
+                    </table>
+                        </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

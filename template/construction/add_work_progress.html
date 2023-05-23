@@ -1,0 +1,69 @@
+{% extends 'construction/index.html' %}
+{% block content %}
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+
+
+
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+
+    </style>
+
+</head>
+<body>
+<div style="min-height:80vh;"><br><br><br><br><br>
+    <h2>Add work progress</h2><br>
+<form id="form1" name="form1" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        <table width="318" border="0" id="cs">
+             <tr>
+                <td>Current Details</td>
+                <td>
+                    <label>
+                       <textarea required name="details"></textarea>
+                    </label>
+                </td>
+             </tr>
+            <tr>
+                <td>Image</td>
+                <td>
+                    <label>
+                        <input type="file" name="image" required class="form-control"/>
+                    </label>
+                </td>
+             </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <label>
+                        <input type="submit" name="Submit" value="Submit" class="section-btn"/>
+                    </label>
+                </td>
+            </tr>
+        </table>
+
+</form>
+</div>
+</body>
+</html>
+
+{% endblock %}

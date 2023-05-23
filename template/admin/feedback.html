@@ -1,0 +1,35 @@
+{% extends 'admin/index.html' %}
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+                    <center>
+                      <h2 class="card-title">Feedback Review</h2>
+                    </center><br><br>
+        <div class="table-responsive">
+  <table class="table">
+      <thead>
+    <tr style="color:green;" >
+        <th>company</th>
+      <th>Positive Review</th>
+         <th>Negative Review</th>
+      <th>Average Review</th>
+        <th></th>
+
+    </tr>
+      </thead>
+      {% for i in data %}
+      <tbody>
+    <tr>
+        <td>{{i.4}}</td>
+        <td>{{i.1}}</td>
+        <td>{{i.2}}</td>
+        <td>{{i.3}}</td>
+    </tr>
+      </tbody>
+      {% endfor %}
+  </table>
+</div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends 'construction/index.html' %}
+{% block content %}
+
+<div class="card">
+                  <div class="card-body">
+                    <center>
+                      <h2 class="card-title"></h2>
+                    </center><br><br>
+
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                           <tr>
+                             <th><h3>USER NAME</h3></th>
+                             <th><h3>REQUIREMENT DETAILS</h3></th>
+                             <th><h3>PLAN IMAGE</h3></th>
+                             <th><h3>DATE</h3></th>
+                             <th><h3>ADVANCE AMOUNT</h3></th>
+                        </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                            <tr>
+                              <td><h4>{{i.7}}</h4></td>
+                              <td><h4>{{i.8}}</h4></td>
+                              <td><img src="../media/{{i.4}}" style="width:100px;"></td>
+                              <td><h4>{{i.3}}</h4></td>
+                              <td><h4>{{i.5}}</h4></td>
+                              <td><a href="../workrequest/{{i.0}}"><button style="color:white; background:green;">work Agreement</button></a></td>
+                              <td><a href="../workprogress/{{i.0}}"><button style="color:white; background:red;">work Progress</button></a></td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+{% endblock %}
